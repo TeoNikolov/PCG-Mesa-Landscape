@@ -1,0 +1,17 @@
+
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/PythonSettings.json
+.vs/ProjectSettings.json
+.vs/PCG-Mesa-Landscapes/v16/.suo
+__pycache__/rendering.cpython-37.pyc
+__pycache__/origin_agent.cpython-37.pyc
+__pycache__/math_functions.cpython-37.pyc
+__pycache__/material.cpython-37.pyc
+__pycache__/heightmap.cpython-37.pyc
+__pycache__/mesa_agent.cpython-37.pyc
+__pycache__/mesa_agent_I.cpython-37.pyc
+__pycache__/mesa_agent_II.cpython-37.pyc
+__pycache__/printer.cpython-37.pyc
+__pycache__/fault.cpython-37.pyc
+__pycache__/CFFkernel.cpython-37.pyc
