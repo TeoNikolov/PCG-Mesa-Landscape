@@ -30,8 +30,8 @@ namespace P2._2
         }
 
         private void UseDefaultsButton_Click(object sender, RoutedEventArgs e) {
-            HeightmapHeightBox.Text = "4096";
-            HeightmapWidthBox.Text = "4096";
+            HeightmapHeightBox.Text = "2048";
+            HeightmapWidthBox.Text = "2048";
             CellsizeBox.Text = "1";
             MesaOriginsBox.Text = "4";
             OriginsScaleBox.Text = "1.0";
@@ -47,7 +47,7 @@ namespace P2._2
             FaultRadiusLowBox.Text = "150";
             FaultRadiusHighBox.Text = "150";
             FaultDistanceBox.Text = "200";
-            FaultCountBox.Text = "1000";
+            FaultCountBox.Text = "500";
             FaultHeightBox.Text = "1.0";
             RoadMaxDistanceBox.Text = "20";
             RoadIterationsBox.Text = "50";
@@ -81,12 +81,13 @@ namespace P2._2
         }
 
         private void RenderHeightmap(Heightmap heightmap, int hm_cellsize) {
+            float scale = 2;
             Point3DCollection points = new Point3DCollection();
             float peak = heightmap.Max();
             float maxsize = Math.Max(heightmap.height, heightmap.width);
             for (int y = 0; y < heightmap.height; y++) {
                 for (int x = 0; x < heightmap.width; x++) {
-                    points.Add(new Point3D(x / (double)maxsize - 0.5, y / (double)maxsize - 0.5, heightmap[x, y] / peak));
+                    points.Add(new Point3D(x / (maxsize - 0.5) * scale, heightmap[x, y] / peak * scale, y / (maxsize - 0.5) * scale));
                 }
             }
 
@@ -95,13 +96,13 @@ namespace P2._2
             for (int y = 0; y < heightmap.height - 1; y++) {
                 for (int x = 0; x < heightmap.width - 1; x++) {
                     //First triangle
-                    indices.Add(x * heightmap.width + y * heightmap.height);
-                    indices.Add(x * heightmap.width + (y + 1) * heightmap.height);
-                    indices.Add((x + 1) * heightmap.width + y * heightmap.height);
+                    indices.Add(x + y * heightmap.width);
+                    indices.Add(x + (y + 1) * heightmap.width);
+                    indices.Add((x + 1) + y * heightmap.width);
                     //Second triangle
-                    indices.Add((x + 1) * heightmap.width + y * heightmap.height);
-                    indices.Add(x * heightmap.width + (y + 1) * heightmap.height);
-                    indices.Add((x + 1) * heightmap.width + (y + 1) * heightmap.height);
+                    indices.Add((x + 1)  + y * heightmap.width);
+                    indices.Add(x + (y + 1) * heightmap.width);
+                    indices.Add((x + 1) + (y + 1) * heightmap.width);
                 }
             }
 
@@ -118,10 +119,24 @@ namespace P2._2
                     //texture.Add(new Point((x + 1) / (double)heightmap.width, (y + 1) / (double)heightmap.height));
                 }
             }
-
+            //MeshGeometry3D newmesh = new MeshGeometry3D();
+            //newmesh.Positions = points;
+            //newmesh.TriangleIndices = indices;
+            //newmesh.TextureCoordinates = texture;
+            //
+            //GeometryModel3D model = new GeometryModel3D();
+            //model.Geometry = newmesh;
+            //ModelVisual3D mv3d = new ModelVisual3D();
+            //mv3d.Content = model;
+            //
+            //viewport3D1.Children.Remove(MyModel);
+            //viewport3D1.Children.Add(mv3d);
             meshMain.Positions = points;
             meshMain.TriangleIndices = indices;
-            //meshMain.TextureCoordinates = texture;
+            meshMain.TextureCoordinates = texture;
+            translate.OffsetX = -scale / 2 * heightmap.width / maxsize;
+            translate.OffsetZ = -scale / 2 * heightmap.height / maxsize;
+            translate.OffsetY = -scale / 2;
         }
 
         private (GenProperties, string) ValidateInput() {
