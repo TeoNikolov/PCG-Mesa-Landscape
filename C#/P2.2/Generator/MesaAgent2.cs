@@ -133,6 +133,7 @@ namespace P2._2.Generator
                         {
                             int hm_x = x - anchor + dx;
                             int hm_y = y - anchor + dy;
+                            if (hm_x == x && hm_y == y) continue; // must ignore the current point
                             accumulator += hm[hm_x, hm_y];
                             acc_count++;
                         }
