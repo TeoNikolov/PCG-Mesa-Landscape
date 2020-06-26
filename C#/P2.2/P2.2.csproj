@@ -91,6 +91,7 @@
     <Compile Include="Generator\Heightmap.cs" />
     <Compile Include="Generator\MaterialList.cs" />
     <Compile Include="Generator\MathFunctions.cs" />
+    <Compile Include="Generator\MesaAgent2.cs" />
     <Compile Include="Generator\MesaAgent1.cs" />
     <Compile Include="Generator\GenProperties.cs" />
     <Compile Include="MainWindow.xaml.cs">

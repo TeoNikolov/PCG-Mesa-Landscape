@@ -8,8 +8,12 @@ using System.Windows.Media.Animation;
 
 namespace P2._2.Generator
 {
+
+    // constructs ONE mesa (origin, mesa path, faults) and applies it to the heightmap
     public class MesaAgent1
     {
+        private static int _idcounter = 1;
+
         int id;
         int width;
         int height;
@@ -26,8 +30,8 @@ namespace P2._2.Generator
         List<LineSegment> pathsegments;
         List<Fault> faults;
 
-        public MesaAgent1(int id, GenProperties gp) {
-            this.id = id;
+        public MesaAgent1(GenProperties gp) {
+            id = _idcounter++;
             width = gp.hm_width;
             height = gp.hm_height;
             scale = gp.m_scale;
@@ -62,12 +66,17 @@ namespace P2._2.Generator
 
             // Construct path
             int imax = MF.Random.Next(segments.low, segments.high);
-            for(int i = 0; i <= imax; i++) {
+            for(int i = 0; i < imax; i++) {
+                if (pathsegments.Count >= imax)
+                {
+                    Console.WriteLine("Exceeded path segment count. An extension was likely generated!");
+                    break;
+                }
                 (float x, float y) oldstart = start;
                 float olddir = dir;
                 (start, dir) = GenerateLineSegment(start, dir, sid);
                 if(sid != 0) {
-                    if(MF.Random.NextDouble() < extensionprob) {
+                    if(MF.Random.NextDouble() < extensionprob && pathsegments.Count < imax) {
                         float a = (dir + olddir) / 2;
                         a += dir < olddir ? (float)Math.PI / 2 : (float)-Math.PI / 2;
                         GenerateLineSegment(oldstart, a, 2);
@@ -136,6 +145,7 @@ namespace P2._2.Generator
                     (int x, int y) fp = ((int)Math.Round(ptemp.x + dirnormal.x * dist), (int)Math.Round(ptemp.y + dirnormal.y * dist));
 
                     // Assign fault CFF (random fault radius)
+                    // TODO: Make the fault radius be "interpolated" instead of fully randomized
                     faults.Add(new Fault(fp, cfflist[MF.Random.Next(0, cfflist.Count)]));
                 }
             }
@@ -143,7 +153,7 @@ namespace P2._2.Generator
 
         public void ApplyFaults(Heightmap heightmap) {
             for(int i = 0; i < faults.Count; i++) {
-                Console.WriteLine($"Agent {id + 1}: Applying fault {i + 1}/{faults.Count}");
+                Console.WriteLine($"Agent {id}: Applying fault {i + 1}/{faults.Count}");
                 faults[i].Apply(heightmap);
             }
             Console.WriteLine();

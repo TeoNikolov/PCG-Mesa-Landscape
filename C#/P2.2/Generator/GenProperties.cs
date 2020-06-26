@@ -8,6 +8,7 @@ namespace P2._2.Generator
 {
     public class GenProperties
     {
+        public static int seed {set;  get; }
         public int hm_width{get;} 
         public int hm_height {get;} 
         public int hm_cellsize {get;} 
@@ -22,7 +23,10 @@ namespace P2._2.Generator
         public int f_distance {get;} 
         public int f_count {get;}
         public float f_height {get;} 
-        public (float height, float hardness)[] mat_list {get;} 
+        public (float height, float hardness)[] mat_list {get;}
+        public float erosion_factor {get;}
+        public float caprock_height {get;}
+        public int levelling_radius {get;}
         public int road_maxdist {get;} 
         public int road_iterations {get;} 
         public int road_width {get;}
@@ -42,6 +46,9 @@ namespace P2._2.Generator
         int f_count,
         float f_height,
         (float, float)[] mat_list,
+        float erosion_factor,
+        float caprock_height,
+        int levelling_radius,
         int road_maxdist,
         int road_iterations,
         int road_width) {
@@ -60,10 +67,12 @@ namespace P2._2.Generator
             this.f_count = f_count;
             this.f_height = f_height;
             this.mat_list = mat_list;
+            this.erosion_factor = erosion_factor;
+            this.caprock_height = caprock_height;
+            this.levelling_radius = levelling_radius;
             this.road_maxdist = road_maxdist;
             this.road_iterations = road_iterations;
             this.road_width = road_width;
         }
-
     }
 }

@@ -9,7 +9,7 @@ namespace P2._2.Generator
 {
     static class MF
     {
-        static Random r = new Random(1337);
+        static Random r = new Random(GenProperties.seed);
         public static (int, int) UnitPointToMapCoords(float x, float y, int mapwidth, int mapheight) {
             return ((int)(x * (mapwidth - 1)), (int)(y * (mapheight - 1)));
         }
@@ -20,6 +20,11 @@ namespace P2._2.Generator
 
         public static (float, float) RandomPointInSquare() {
             return ((float)r.NextDouble(), (float)r.NextDouble());
+        }
+
+        public static void Reseed()
+        {
+            r = new Random(GenProperties.seed);
         }
 
         public static Random Random {

@@ -44,7 +44,7 @@ namespace P2._2.Generator
         }
 
         public void Apply(Heightmap heightmap, int x, int y) {
-            // Corner coordinates
+            // Translated CFF Corner coordinates
             (int x, int y) p1 = (x - anchor, y - anchor);
             (int x, int y) p2 = (x + anchor, y + anchor);
 

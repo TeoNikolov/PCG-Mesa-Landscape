@@ -7,7 +7,15 @@
    mc:Ignorable = "d" Title = "MainWindow" Height = "939.888" Width = "1652.528">
 
     <Grid x:Name="MainGrid">
-        <Viewport3D Name="viewport3D1" Grid.RowSpan="2" Margin="468,0,10,184">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="811*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="533*"/>
+            <ColumnDefinition Width="1113*"/>
+        </Grid.ColumnDefinitions>
+        <Viewport3D Name="viewport3D1" Margin="468,0,10.4,184.4" Grid.ColumnSpan="2" Grid.RowSpan="2">
 
             <Viewport3D.Camera>
                 <PerspectiveCamera x:Name = "camMain" Position = "6 5 4" LookDirection = "-6 -5 -4">
@@ -44,7 +52,7 @@
                     </GeometryModel3D>
                 </ModelVisual3D.Content>
 
-                
+
                 <ModelVisual3D.Transform>
                     <Transform3DGroup>
                         <TranslateTransform3D x:Name ="translate" OffsetX="-0.5" OffsetZ="-0.5">
@@ -61,10 +69,10 @@
         </Viewport3D>
 
         <Slider Height = "57" HorizontalAlignment = "Left"  
-         Margin = "789,811,0,0" Name = "slider1" 
+         Margin = "256.2,670,0,0" Name = "slider1" 
          VerticalAlignment = "Top" Width = "503"  
          Maximum = "360" 
-         Value = "{Binding ElementName = rotate, Path=Angle}" RenderTransformOrigin="0.5,0.5" >
+         Value = "{Binding ElementName = rotate, Path=Angle}" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1" >
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="2" ScaleY="2"/>
@@ -74,32 +82,64 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Rectangle x:Name="Propertiesbox" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="909" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="468"/>
-        <TextBox x:Name="HeightmapWidthBox" HorizontalAlignment="Left" Height="25" Margin="10,85,0,0" TextWrapping="Wrap" Text="Heightmap Width" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="HeightmapHeightBox" HorizontalAlignment="Left" Height="25" Margin="10,115,0,0" TextWrapping="Wrap" Text="Heightmap Height" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="MesaOriginsBox" HorizontalAlignment="Left" Height="25" Margin="10,175,0,0" TextWrapping="Wrap" Text="Mesa Origins" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="OriginsScaleBox" HorizontalAlignment="Left" Height="25" Margin="10,205,0,0" TextWrapping="Wrap" Text="Origins Scale" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="MesaPathSegmentsLowBox" HorizontalAlignment="Left" Height="25" Margin="10,235,0,0" TextWrapping="Wrap" Text="Path Segments Low" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="MesaPathSegmentsHighBox" HorizontalAlignment="Left" Height="25" Margin="186,235,0,0" TextWrapping="Wrap" Text="Path Segments High" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="CellsizeBox" HorizontalAlignment="Left" Height="25" Margin="10,145,0,0" TextWrapping="Wrap" Text="Cell Size" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="AngularVarLowBox" HorizontalAlignment="Left" Height="25" Margin="10,265,0,0" TextWrapping="Wrap" Text="Angular Var. Low" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="AngularVarHighBox" HorizontalAlignment="Left" Height="25" Margin="186,265,0,0" TextWrapping="Wrap" Text="Angular Var. High" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="ExtAngularVarLowBox" HorizontalAlignment="Left" Height="25" Margin="10,295,0,0" TextWrapping="Wrap" Text="Ext. Angular Var. Low" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="ExtAngularVarHighBox" HorizontalAlignment="Left" Height="25" Margin="186,295,0,0" TextWrapping="Wrap" Text="Ext. Angular Var. High" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="LengthVarLowBox" HorizontalAlignment="Left" Height="25" Margin="10,325,0,0" TextWrapping="Wrap" Text="Length Var. Low" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="LengthVarHighBox" HorizontalAlignment="Left" Height="25" Margin="186,325,0,0" TextWrapping="Wrap" Text="Length Var. High" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="ExtProbBox" HorizontalAlignment="Left" Height="25" Margin="10,355,0,0" TextWrapping="Wrap" Text="Extension Probability" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="FaultRadiusLowBox" HorizontalAlignment="Left" Height="25" Margin="10,385,0,0" TextWrapping="Wrap" Text="Fault Radius Low" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="FaultRadiusHighBox" HorizontalAlignment="Left" Height="25" Margin="186,385,0,0" TextWrapping="Wrap" Text="Fault Radius High" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="FaultDistanceBox" HorizontalAlignment="Left" Height="25" Margin="10,415,0,0" TextWrapping="Wrap" Text="Fault Distance" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="FaultCountBox" HorizontalAlignment="Left" Height="25" Margin="10,445,0,0" TextWrapping="Wrap" Text="Fault Count" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="FaultHeightBox" HorizontalAlignment="Left" Height="25" Margin="10,475,0,0" TextWrapping="Wrap" Text="Fault Height" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="RoadMaxDistanceBox" HorizontalAlignment="Left" Height="25" Margin="10,505,0,0" TextWrapping="Wrap" Text="Road Max Distance" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="RoadIterationsBox" HorizontalAlignment="Left" Height="25" Margin="10,535,0,0" TextWrapping="Wrap" Text="Road Iterations" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <TextBox x:Name="RoadWidthBox" HorizontalAlignment="Left" Height="25" Margin="10,565,0,0" TextWrapping="Wrap" Text="Road Width" VerticalAlignment="Top" Width="171" FontSize="16"/>
-        <Button x:Name="UseDefaultsButton" Content="Use Defaults" HorizontalAlignment="Left" Margin="10,612,0,0" VerticalAlignment="Top" Width="122" Height="57" FontSize="16" Click="UseDefaultsButton_Click"/>
-        <Button x:Name="GenerateButton" Content="Generate!" HorizontalAlignment="Left" Margin="186,612,0,0" VerticalAlignment="Top" Width="122" Height="57" FontSize="16" Click="GenerateButton_Click"/>
-        <TextBlock x:Name="OutputBox" HorizontalAlignment="Left" Margin="10,674,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="225" Width="453"/>
+        <Rectangle x:Name="Propertiesbox" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="909" Stroke="Black" VerticalAlignment="Top" Width="468" Grid.RowSpan="2"/>
+        <TextBox x:Name="HeightmapWidthBox" HorizontalAlignment="Left" Height="25" Margin="228,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16"/>
+        <TextBox x:Name="HeightmapHeightBox" HorizontalAlignment="Left" Height="25" Margin="228,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16"/>
+        <TextBox x:Name="MesaOriginsBox" HorizontalAlignment="Left" Height="25" Margin="228,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="OriginsScaleBox" HorizontalAlignment="Left" Height="25" Margin="228,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="MesaPathSegmentsLowBox" HorizontalAlignment="Left" Height="25" Margin="228,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="MesaPathSegmentsHighBox" HorizontalAlignment="Left" Height="25" Margin="349,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="CellsizeBox" HorizontalAlignment="Left" Height="25" Margin="228,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="AngularVarLowBox" HorizontalAlignment="Left" Height="25" Margin="228,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="AngularVarHighBox" HorizontalAlignment="Left" Height="25" Margin="349,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="ExtAngularVarLowBox" HorizontalAlignment="Left" Height="25" Margin="228,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="ExtAngularVarHighBox" HorizontalAlignment="Left" Height="25" Margin="349,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="LengthVarLowBox" HorizontalAlignment="Left" Height="25" Margin="228,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="LengthVarHighBox" HorizontalAlignment="Left" Height="25" Margin="349,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="ExtProbBox" HorizontalAlignment="Left" Height="25" Margin="228,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="FaultRadiusLowBox" HorizontalAlignment="Left" Height="25" Margin="228,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="FaultRadiusHighBox" HorizontalAlignment="Left" Height="25" Margin="349,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="FaultDistanceBox" HorizontalAlignment="Left" Height="25" Margin="228,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="FaultCountBox" HorizontalAlignment="Left" Height="25" Margin="228,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="FaultHeightBox" HorizontalAlignment="Left" Height="25" Margin="228,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="RoadMaxDistanceBox" HorizontalAlignment="Left" Height="25" Margin="228,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="RoadIterationsBox" HorizontalAlignment="Left" Height="25" Margin="228,509,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="RoadWidthBox" HorizontalAlignment="Left" Height="25" Margin="228,539,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <Button x:Name="UseDefaultsButton" Content="Use Defaults" HorizontalAlignment="Left" Margin="90,573.8,0,0" VerticalAlignment="Top" Width="120" Height="56" FontSize="16" Click="UseDefaultsButton_Click" Grid.Row="1" RenderTransformOrigin="0.623,0.493"/>
+        <Button x:Name="GenerateButton" Content="Generate!" HorizontalAlignment="Left" Margin="253,573.8,0,0" VerticalAlignment="Top" Width="120" Height="56" FontSize="16" Click="GenerateButton_Click" Grid.Row="1" RenderTransformOrigin="0.197,0.521"/>
+        <TextBlock x:Name="OutputBox" HorizontalAlignment="Left" Margin="26,635,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="165" Width="421" Grid.Row="1"/>
+        <TextBox x:Name="SeedBox" HorizontalAlignment="Left" Height="25" Margin="228,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16"/>
+        <TextBox x:Name="MatListBox" HorizontalAlignment="Left" Height="25" Margin="228,360,0,0" TextWrapping="Wrap" Text="E.g.  0.0;10;0.2;20;0.5;50" VerticalAlignment="Top" Width="219" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="ErosionBox" HorizontalAlignment="Left" Height="25" Margin="228,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="CaprockBox" HorizontalAlignment="Left" Height="25" Margin="228,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="LevellingBox" HorizontalAlignment="Left" Height="25" Margin="228,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <Label Content="Seed" HorizontalAlignment="Left" Margin="21,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16"/>
+        <Label Content="Heightmap Width" HorizontalAlignment="Left" Margin="21,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16"/>
+        <Label Content="Heightmap Height" HorizontalAlignment="Left" Margin="21,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16"/>
+        <Label Content="Cell Size (m)" HorizontalAlignment="Left" Margin="21,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.RowSpan="2" Height="31"/>
+        <Label Content="Mesa Count" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Origins Scale" HorizontalAlignment="Left" Margin="21,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Path Segments Count" HorizontalAlignment="Left" Margin="21,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Angular Variation (deg)" HorizontalAlignment="Left" Margin="21,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Extension Angular Var (deg)" HorizontalAlignment="Left" Margin="21,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Length Variation (m)" HorizontalAlignment="Left" Margin="21,177,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Extesion Probability" HorizontalAlignment="Left" Margin="21,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Fault Radius" HorizontalAlignment="Left" Margin="21,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Fault Distance (m)" HorizontalAlignment="Left" Margin="21,266,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Fault Count" HorizontalAlignment="Left" Margin="21,297,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Fault Height (m)" HorizontalAlignment="Left" Margin="21,327,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Material List" HorizontalAlignment="Left" Margin="21,356,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Erosion Factor" HorizontalAlignment="Left" Margin="21,387,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Caprock Height" HorizontalAlignment="Left" Margin="21,416,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Levelling Radius" HorizontalAlignment="Left" Margin="21,447,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Road Max Distance" HorizontalAlignment="Left" Margin="21,477,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Road Iterations" HorizontalAlignment="Left" Margin="21,505,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Road Width" HorizontalAlignment="Left" Margin="21,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="330,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="330,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="330,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="330,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="-" HorizontalAlignment="Left" Margin="330,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
 
     </Grid>
 

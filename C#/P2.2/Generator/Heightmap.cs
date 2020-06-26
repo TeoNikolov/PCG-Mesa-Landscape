@@ -33,5 +33,44 @@ namespace P2._2.Generator
                 max = f > max ? f : max;
             return max;
         }
+
+        public void Normalize()
+        {
+            float maxHeight = Max();
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    data[x, y] /= maxHeight;
+                }
+            }
+        }
+
+        public void Scale(float scale)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    data[x, y] *= scale;
+                }
+            }
+        }
+
+        public override string ToString()
+        {
+            string result = "";
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    result += String.Format("{0:0.00}", this[x, y]) + " ";
+                }
+                result += "\n";
+            }
+
+            return result;
+        }
     }
 }
