@@ -102,9 +102,9 @@
         <TextBox x:Name="FaultDistanceBox" HorizontalAlignment="Left" Height="25" Margin="228,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
         <TextBox x:Name="FaultCountBox" HorizontalAlignment="Left" Height="25" Margin="228,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
         <TextBox x:Name="FaultHeightBox" HorizontalAlignment="Left" Height="25" Margin="228,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
-        <TextBox x:Name="RoadMaxDistanceBox" HorizontalAlignment="Left" Height="25" Margin="228,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
-        <TextBox x:Name="RoadIterationsBox" HorizontalAlignment="Left" Height="25" Margin="228,509,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
-        <TextBox x:Name="RoadWidthBox" HorizontalAlignment="Left" Height="25" Margin="228,539,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="RoadMaxDistanceBox" HorizontalAlignment="Left" Height="25" Margin="228,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1" IsEnabled="False"/>
+        <TextBox x:Name="RoadIterationsBox" HorizontalAlignment="Left" Height="25" Margin="228,509,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1" IsEnabled="False"/>
+        <TextBox x:Name="RoadWidthBox" HorizontalAlignment="Left" Height="25" Margin="228,539,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontSize="16" Grid.Row="1" IsEnabled="False"/>
         <Button x:Name="UseDefaultsButton" Content="Use Defaults" HorizontalAlignment="Left" Margin="90,573.8,0,0" VerticalAlignment="Top" Width="120" Height="56" FontSize="16" Click="UseDefaultsButton_Click" Grid.Row="1" RenderTransformOrigin="0.623,0.493"/>
         <Button x:Name="GenerateButton" Content="Generate!" HorizontalAlignment="Left" Margin="253,573.8,0,0" VerticalAlignment="Top" Width="120" Height="56" FontSize="16" Click="GenerateButton_Click" Grid.Row="1" RenderTransformOrigin="0.197,0.521"/>
         <TextBlock x:Name="OutputBox" HorizontalAlignment="Left" Margin="26,635,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="165" Width="421" Grid.Row="1"/>
@@ -132,9 +132,9 @@
         <Label Content="Erosion Factor" HorizontalAlignment="Left" Margin="21,387,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
         <Label Content="Caprock Height" HorizontalAlignment="Left" Margin="21,416,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
         <Label Content="Levelling Radius" HorizontalAlignment="Left" Margin="21,447,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
-        <Label Content="Road Max Distance" HorizontalAlignment="Left" Margin="21,477,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
-        <Label Content="Road Iterations" HorizontalAlignment="Left" Margin="21,505,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
-        <Label Content="Road Width" HorizontalAlignment="Left" Margin="21,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
+        <Label Content="Road Max Distance" HorizontalAlignment="Left" Margin="21,477,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1" Foreground="#FFADADAD"/>
+        <Label Content="Road Iterations" HorizontalAlignment="Left" Margin="21,505,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1" Foreground="#FFADADAD"/>
+        <Label Content="Road Width" HorizontalAlignment="Left" Margin="21,535,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1" Foreground="#FFADADAD"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="330,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="330,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="330,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.427" FontSize="16" Grid.Row="1"/>

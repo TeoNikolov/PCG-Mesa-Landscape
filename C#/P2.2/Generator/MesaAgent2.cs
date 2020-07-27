@@ -99,6 +99,7 @@ namespace P2._2.Generator
                 {
                     hm[x, y] -= erosion_factor * (1.0f - hardnessMap[x, y]);
                     if (hm[x, y] > caprock_height) hm[x, y] = caprock_height;
+                    if (hm[x, y] < 0) hm[x, y] = 0;
                 }
             }
         }

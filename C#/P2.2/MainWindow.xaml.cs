@@ -97,7 +97,6 @@ namespace P2._2
             for (int y = 0; y < heightmap.height; y++) {
                 for (int x = 0; x < heightmap.width; x++) {
                     points.Add(new Point3D(x / (maxsize - 0.5) * scale, heightmap[x, y] / (maxsize - 0.5) * scale, y / (maxsize - 0.5) * scale));
-                    //points.Add(new Point3D(x / (maxsize - 0.5) * scale, heightmap[x, y] / peak * scale, y / (maxsize - 0.5) * scale));
                 }
             }
 
