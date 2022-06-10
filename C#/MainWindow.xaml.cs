@@ -32,10 +32,10 @@ namespace P2._2
 
         private void UseDefaultsButton_Click(object sender, RoutedEventArgs e) {
             SeedBox.Text = "42";
-            HeightmapHeightBox.Text = "2048";
-            HeightmapWidthBox.Text = "2048";
+            HeightmapHeightBox.Text = "512";
+            HeightmapWidthBox.Text = "512";
             CellsizeBox.Text = "1";
-            MesaOriginsBox.Text = "4";
+            MesaOriginsBox.Text = "3";
             OriginsScaleBox.Text = "1.0";
             MesaPathSegmentsLowBox.Text = "1";
             MesaPathSegmentsHighBox.Text = "4";
@@ -43,8 +43,8 @@ namespace P2._2
             AngularVarHighBox.Text = "50";
             ExtAngularVarLowBox.Text = "-15";
             ExtAngularVarHighBox.Text = "15";
-            LengthVarLowBox.Text = "20";
-            LengthVarHighBox.Text = "200";
+            LengthVarLowBox.Text = "50";
+            LengthVarHighBox.Text = "100";
             ExtProbBox.Text = "0.1";
             FaultRadiusLowBox.Text = "150";
             FaultRadiusHighBox.Text = "150";
