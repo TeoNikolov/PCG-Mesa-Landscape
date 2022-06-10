@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
 
-namespace P2._2.Generator
+namespace MesaGen.Generator
 {
     static class MF
     {

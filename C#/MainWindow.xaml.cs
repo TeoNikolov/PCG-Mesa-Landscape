@@ -1,4 +1,4 @@
-﻿using P2._2.Generator;
+﻿using MesaGen.Generator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +18,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Windows.Media.Media3D;
 
-namespace P2._2
+namespace MesaGen
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Animation;
 
-namespace P2._2.Generator
+namespace MesaGen.Generator
 {
     // A global agent exposing heightmap-wide operations, such as Geometry gradation and Geometry levelling
     // The operations have no requirements of the heightmap and can be called at any time

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Animation;
 
-namespace P2._2.Generator
+namespace MesaGen.Generator
 {
 
     // constructs ONE mesa (origin, mesa path, faults) and applies it to the heightmap

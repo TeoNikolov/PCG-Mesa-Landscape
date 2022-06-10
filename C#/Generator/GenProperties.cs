@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P2._2.Generator
+namespace MesaGen.Generator
 {
     public class GenProperties
     {

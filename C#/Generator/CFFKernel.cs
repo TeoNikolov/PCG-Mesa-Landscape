@@ -5,9 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using P2._2;
+using MesaGen;
 
-namespace P2._2.Generator
+namespace MesaGen.Generator
 {
     public class CFFKernel
     {
